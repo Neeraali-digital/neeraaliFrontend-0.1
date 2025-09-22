@@ -1,0 +1,130 @@
+:host {
+  display: block;
+}
+
+.service-card {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    
+    .service-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .service-features {
+      transform: translateX(4px);
+    }
+  }
+}
+
+.service-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(45deg, transparent, theme('colors.brand.500' / 10%), transparent);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+.service-features {
+  transition: transform 0.3s ease;
+  
+  li {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+    
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.1}s;
+      }
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial-card {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: linear-gradient(45deg, theme('colors.brand.500'), theme('colors.accent.500'), theme('colors.brand.500'));
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0.3;
+  }
+}
+
+.pattern-dots {
+  background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pattern-grid {
+  background-image: 
+    linear-gradient(currentColor 1px, transparent 1px),
+    linear-gradient(90deg, currentColor 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pattern-diagonal {
+  background-image: repeating-linear-gradient(
+    45deg,
+    currentColor,
+    currentColor 1px,
+    transparent 1px,
+    transparent 10px
+  );
+}
+
+// Responsive design
+@media (max-width: 1024px) {
+  .service-card {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-icon {
+    width: 3rem;
+    height: 3rem;
+    
+    .material-icons {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .testimonial-card {
+    padding: 2rem;
+    
+    blockquote {
+      font-size: 1.25rem;
+    }
+  }
+}

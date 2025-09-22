@@ -1,0 +1,87 @@
+:host {
+  display: block;
+}
+
+.hero-text-reveal {
+  overflow: hidden;
+  
+  h1 {
+    animation: slideUpReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slideUpReveal {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.floating-card {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px) scale(1.02);
+  }
+}
+
+.logo-glow {
+  filter: drop-shadow(0 0 30px theme('colors.brand.500' / 30%));
+  
+  &:hover {
+    filter: drop-shadow(0 0 50px theme('colors.brand.500' / 50%));
+  }
+}
+
+.stats-counter {
+  counter-reset: stat-counter;
+  
+  .stat-number {
+    animation: countUp 2s ease-out forwards;
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Modern glassmorphism effects
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .hero-text-reveal h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+  }
+  
+  .logo-container {
+    padding: 2rem;
+    
+    img {
+      width: 12rem;
+      height: 12rem;
+    }
+  }
+}
