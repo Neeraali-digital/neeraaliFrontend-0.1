@@ -29,9 +29,11 @@
         [style.animation-delay]="(i * 0.1) + 's'"
       >
         <!-- Service Card -->
-        <div class="h-full neo-card p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden">
+        <div class="h-full p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden service-card rounded-[2rem]">
+          <!-- Accent corner shape -->
+          <div class="absolute -top-10 -right-10 w-32 h-32 rotate-12 bg-gradient-to-br from-brand-500/20 to-transparent rounded-3xl blur-xl"></div>
           <!-- Background Pattern -->
-          <div class="absolute inset-0 opacity-5">
+          <div class="absolute inset-0 opacity-5 mix-blend-overlay">
             <div [class]="'w-full h-full ' + service.pattern"></div>
           </div>
 
@@ -46,6 +48,7 @@
               {{ service.title }}
             </h3>
             <p class="text-gray-600 mb-6 leading-relaxed">{{ service.description }}</p>
+            <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-accent-500 rounded-full mb-6"></div>
 
             <!-- Service Features -->
             <ul class="space-y-3 mb-8">

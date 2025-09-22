@@ -19,6 +19,13 @@ import { CommonModule } from '@angular/common';
                 Transform your business with our comprehensive digital solutions.
               </p>
               
+              <!-- Partners -->
+              <div class="flex flex-wrap items-center gap-3 mb-6">
+                <span class="text-sm text-gray-400">Partners:</span>
+                <span class="px-3 py-1 bg-white/10 text-white text-sm rounded-lg border border-white/10">Google Partner</span>
+                <span class="px-3 py-1 bg-white/10 text-white text-sm rounded-lg border border-white/10">Bing Partner</span>
+              </div>
+              
               <!-- Social Links -->
               <div class="flex space-x-4">
                 <a href="#" class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center hover:bg-primary-700 transition-colors duration-300">
@@ -58,7 +65,7 @@ import { CommonModule } from '@angular/common';
                 <li><a href="#portfolio" class="text-gray-300 hover:text-white transition-colors duration-300">Portfolio</a></li>
                 <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a></li>
                 <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Blog</a></li>
-                <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Careers</a></li>
+                <li><a href="mailto:hr&#64;neeraali.com" class="text-gray-300 hover:text-white transition-colors duration-300">Career</a></li>
               </ul>
             </div>
           </div>
@@ -85,27 +92,22 @@ import { CommonModule } from '@angular/common';
 
           <!-- Contact Info -->
           <div class="mt-12 pt-8 border-t border-gray-800">
-            <div class="grid md:grid-cols-3 gap-8">
-              <div class="flex items-center">
-                <span class="material-icons text-primary-500 mr-3">email</span>
-                <div>
-                  <div class="font-semibold">Email</div>
-                  <div class="text-gray-300">helloneeraali.com</div>
-                </div>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h5 class="text-xl font-semibold mb-3">Reach Us</h5>
+                <ul class="space-y-2 text-gray-300">
+                  <li><span class="font-medium text-white">Phone:</span> +91 99458 83333</li>
+                  <li><span class="font-medium text-white">Email:</span> <a href="mailto:connect&#64;neeraali.com" class="hover:text-white">connect&#64;neeraali.com</a></li>
+                  <li><span class="font-medium text-white">Career:</span> <a href="mailto:hr&#64;neeraali.com" class="hover:text-white">hr&#64;neeraali.com</a></li>
+                </ul>
               </div>
-              <div class="flex items-center">
-                <span class="material-icons text-primary-500 mr-3">phone</span>
-                <div>
-                  <div class="font-semibold">Phone</div>
-                  <div class="text-gray-300">+1 (555) 123-4567</div>
-                </div>
-              </div>
-              <div class="flex items-center">
-                <span class="material-icons text-primary-500 mr-3">location_on</span>
-                <div>
-                  <div class="font-semibold">Address</div>
-                  <div class="text-gray-300">123 Digital Avenue, NY 10001</div>
-                </div>
+              <div>
+                <h5 class="text-xl font-semibold mb-3">Contact Us</h5>
+                <address class="not-italic text-gray-300 leading-relaxed">
+                  Kirloskar business Park<br>
+                  Hebbal,<br>
+                  Bengaluru, Karnataka 560024
+                </address>
               </div>
             </div>
           </div>

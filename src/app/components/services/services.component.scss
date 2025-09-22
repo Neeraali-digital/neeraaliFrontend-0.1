@@ -5,9 +5,11 @@
 .service-card {
   position: relative;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
   
   &:hover {
     transform: translateY(-8px) scale(1.02);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     
     .service-icon {
       transform: scale(1.1) rotate(5deg);

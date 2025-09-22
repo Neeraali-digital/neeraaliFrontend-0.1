@@ -14,7 +14,7 @@ interface ProcessStep {
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section class="section-padding bg-white">
+    <section class="section-padding bg-white relative overflow-hidden">
       <div class="container-custom">
         <!-- Section Header -->
         <div class="text-center mb-16 animate-on-scroll">
@@ -26,6 +26,9 @@ interface ProcessStep {
 
         <!-- Process Steps -->
         <div class="relative">
+          <!-- Background accents -->
+          <div class="absolute -top-24 -right-24 w-72 h-72 bg-primary-100 rounded-full blur-3xl opacity-60"></div>
+          <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-accent-100 rounded-full blur-3xl opacity-40"></div>
           <!-- Connection Line -->
           <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary-200 via-primary-400 to-primary-600 transform -translate-y-1/2 z-0"></div>
           
@@ -51,8 +54,8 @@ interface ProcessStep {
               <p class="text-gray-600 mb-6 leading-relaxed">{{ step.description }}</p>
               
               <!-- Step Details -->
-              <div class="bg-gray-50 rounded-lg p-4">
-                <ul class="text-sm text-gray-700 space-y-2">
+              <div class="bg-gray-50 rounded-xl p-4 shadow-sm">
+                <ul class="text-sm text-gray-700 space-y-2 text-left">
                   <li *ngFor="let detail of step.details" class="flex items-center">
                     <span class="material-icons text-primary-600 mr-2 text-xs">fiber_manual_record</span>
                     {{ detail }}
@@ -65,11 +68,13 @@ interface ProcessStep {
 
         <!-- Process Benefits -->
         <div class="mt-20 animate-on-scroll">
-          <div class="bg-gradient-to-br from-primary-50 to-purple-50 rounded-2xl p-8 md:p-12">
+          <div class="bg-gradient-to-br from-primary-50 to-purple-50 rounded-3xl p-8 md:p-12 shadow-lg relative overflow-hidden">
+            <div class="absolute -top-8 -left-8 w-40 h-40 bg-primary-200 rounded-full blur-2xl opacity-50"></div>
+            <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-purple-200 rounded-full blur-2xl opacity-40"></div>
             <h3 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Why Our Process Works</h3>
             
             <div class="grid md:grid-cols-3 gap-8">
-              <div class="text-center">
+              <div class="text-center bg-white rounded-2xl p-6 shadow-sm">
                 <div class="w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <span class="material-icons text-2xl text-white">schedule</span>
                 </div>
@@ -77,7 +82,7 @@ interface ProcessStep {
                 <p class="text-gray-600">Streamlined workflow ensures projects are delivered on time without compromising quality.</p>
               </div>
               
-              <div class="text-center">
+              <div class="text-center bg-white rounded-2xl p-6 shadow-sm">
                 <div class="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <span class="material-icons text-2xl text-white">verified</span>
                 </div>
@@ -85,7 +90,7 @@ interface ProcessStep {
                 <p class="text-gray-600">Multiple checkpoints and reviews guarantee exceptional quality at every stage.</p>
               </div>
               
-              <div class="text-center">
+              <div class="text-center bg-white rounded-2xl p-6 shadow-sm">
                 <div class="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <span class="material-icons text-2xl text-white">groups</span>
                 </div>
