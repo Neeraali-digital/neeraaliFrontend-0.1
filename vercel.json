@@ -10,6 +10,10 @@
   ],
   "routes": [
     {
+      "src": "/(.*)\\.(js|css|png|jpg|jpeg|svg|ico|json|map|txt|webp|woff|woff2)",
+      "dest": "/$1.$2"
+    },
+    {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
     },
